@@ -30,12 +30,13 @@ def get_tweet_replies(name, tweet_id, csv_name):
 def get_old_tweets(num, since, until, csv_name, name=None, query=None):
     tweet = None
     if name is not None:
-        tweetCriteria = got.manager.TweetCriteria().setUsername(name).setSince(since).setUntil(until).setMaxTweets(num)
+        tweetCriteria = got.manager.TweetCriteria().setUsername(name).setSince(since).setUntil(until)\
+            .setTopTweets(True).setLang('eng').setMaxTweets(num)
         tweet = got.manager.TweetManager.getTweets(tweetCriteria)
 
     elif query is not None:
         tweetCriteria = got.manager.TweetCriteria().setQuerySearch(query).setSince(since).setUntil(until) \
-            .setMaxTweets(num)
+            .setTopTweets(True).setLang('eng').setMaxTweets(num)
         tweet = got.manager.TweetManager.getTweets(tweetCriteria)
 
     text_tweets = [[tw.username, tw.text] for tw in tweet]

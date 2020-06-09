@@ -9,9 +9,10 @@ def graph_scores(csv_file):
 
     fig, ax = plt.subplots(1, 2, figsize=(20, 10))
     sns.countplot(df['sentiment'], order=["Negative", "Neutral", "Positive"], ax=ax[0])
-    sns.countplot(df["fine grain sentiment"], order=["Very Negative", "Slightly Negative",
+    sns.countplot(df['fine grain sentiment'], order=["Very Negative", "Slightly Negative",
                                                      "Neutral", "Slightly Positive", "Very Positive"], ax=ax[1])
     plt.savefig(name+'.png')
+    plt.close('all')
 
 
 # test
