@@ -23,8 +23,10 @@ def describe_stats(csv_file, since, until):
     std_sen = df['sentiment'].std()
     std_f_sen = df['fine grain sentiment'].std()
 
+    num = len(df.index)
+
     return [since + ':' + until,
             avg_sen, med_sen,
             mode_sen, std_sen,
             avg_f_sen, med_f_sen,
-            mode_f_sen, std_f_sen]
+            mode_f_sen, std_f_sen, num]

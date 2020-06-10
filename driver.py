@@ -16,8 +16,8 @@ def driver(num, since, until, name=None, query=None):
 
     add_sentiment(csv_name)
 
-    word_cloud(csv_name)
+    # word_cloud(csv_name)
 
-    graph_scores(csv_name)
+    # graph_scores(csv_name)
 
     return describe_stats(csv_name, since, until)
